@@ -11,4 +11,9 @@ public class Book {
         this.author = author;
         this.publicationYear = publicationYear;
     }
+
+    @Override
+    public String toString() {
+        return author.toUpperCase() + ", " + title + " - " + publicationYear;
+    }
 }
