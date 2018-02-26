@@ -17,9 +17,12 @@ public class UserInterfaceTest {
     @Test
     public void testBuildStringForABookList() {
         ArrayList<Book> bookList = new ArrayList<Book>();
-        bookList.add(new Book("Clean Code", "Uncle Bob", 2008));
 
-        final String EXPECTED_RETURN = "(0) UNCLE BOB, Clean Code - 2008";
+        bookList.add(new Book("Random Title", "Random Author", 2018));
+        bookList.add(new Book("Another Title", "Another Person", 2018));
+
+        final String EXPECTED_RETURN = "(0) RANDOM AUTHOR, Random Title - 2018\n" +
+                "(1) ANOTHER PERSON, Another Title - 2018";
 
         assertEquals(EXPECTED_RETURN, UserInterface.buildStringFor(bookList));
     }
