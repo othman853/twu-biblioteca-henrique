@@ -16,7 +16,7 @@ public class Library {
     }
 
     private static void initialSeed() {
-        bookList.add(new Book("Clean Code", "Uncle Bob", 2008));
-        bookList.add(new Book("Head First Java", "Kathy Sierra", 2003));
+        bookList.add(new Book("Clean Code", "Uncle Bob", 2008, false));
+        bookList.add(new Book("Head First Java", "Kathy Sierra", 2003, false));
     }
 }

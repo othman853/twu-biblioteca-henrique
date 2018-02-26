@@ -23,14 +23,15 @@ public class UserInterfaceTest {
     }
 
     @Test
-    public void testBuildStringForAList() {
+    public void testBuildStringForABookList() {
         ArrayList<Book> bookList = new ArrayList<Book>();
 
-        bookList.add(new Book("Random Title", "Random Author", 2018));
-        bookList.add(new Book("Another Title", "Another Person", 2018));
+        bookList.add(new Book("Random Title", "Random Author", 2018, false));
+        bookList.add(new Book("Other Title", "Other Person", 2018, true));
+        bookList.add(new Book("Another Title", "Another Person", 2018, false));
 
         final String EXPECTED_RETURN = "(0) RANDOM AUTHOR, Random Title - 2018\n" +
-                "(1) ANOTHER PERSON, Another Title - 2018";
+                "(2) ANOTHER PERSON, Another Title - 2018";
 
         assertEquals(EXPECTED_RETURN, UserInterface.buildStringForABookList(bookList));
     }

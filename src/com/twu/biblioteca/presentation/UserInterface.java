@@ -31,6 +31,7 @@ public class UserInterface {
         String listToString = "";
 
         for (int i = 0; i < bookList.size(); i++) {
+            if (bookList.get(i).isCheckedOut()) continue;
             listToString += "(" + i + ") " + bookList.get(i);
             if (i < bookList.size() - 1) listToString += "\n";
         }
