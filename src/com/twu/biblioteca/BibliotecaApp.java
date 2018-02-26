@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.models.Book;
+import com.twu.biblioteca.models.Library;
 import com.twu.biblioteca.presentation.UserInterface;
 
 import java.util.ArrayList;
@@ -8,9 +9,7 @@ import java.util.ArrayList;
 public class BibliotecaApp {
 
     public static void main(String[] args) {
-        ArrayList<Book> bookList = new ArrayList<Book>();
-        bookList.add(new Book("Clean Code", "Uncle Bob", 2008));
-        bookList.add(new Book("Head First Java", "Kathy Sierra", 2003));
+        ArrayList<Book> bookList = Library.getBookList();
 
         System.out.println(UserInterface.buildWelcomeMessage() + "\n");
         System.out.println(UserInterface.buildStringForTheMenuOptions() + "\n");
@@ -19,10 +18,10 @@ public class BibliotecaApp {
 
         do {
             chosenOption = UserInterface.waitForUserChoice();
-            
+
             switch (chosenOption) {
                 case 1:
-                    System.out.println("\n" + UserInterface.buildStringForABookList(bookList));
+                    System.out.println("\n" + UserInterface.buildStringForABookList(bookList) + "\n");
                     break;
             }
         } while (chosenOption != 0);
