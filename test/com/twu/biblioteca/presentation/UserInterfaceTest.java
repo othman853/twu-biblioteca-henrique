@@ -15,7 +15,15 @@ public class UserInterfaceTest {
     }
 
     @Test
-    public void testBuildStringForABookList() {
+    public void testBuildStringForTheMenuOptions() {
+        final String EXPECTED_RETURN = "(0) LIST BOOKS";
+
+        assertEquals(EXPECTED_RETURN, UserInterface.buildStringForTheMenuOptions());
+    }
+
+
+    @Test
+    public void testBuildStringForAList() {
         ArrayList<Book> bookList = new ArrayList<Book>();
 
         bookList.add(new Book("Random Title", "Random Author", 2018));
@@ -24,6 +32,6 @@ public class UserInterfaceTest {
         final String EXPECTED_RETURN = "(0) RANDOM AUTHOR, Random Title - 2018\n" +
                 "(1) ANOTHER PERSON, Another Title - 2018";
 
-        assertEquals(EXPECTED_RETURN, UserInterface.buildStringFor(bookList));
+        assertEquals(EXPECTED_RETURN, UserInterface.buildStringForABookList(bookList));
     }
 }
