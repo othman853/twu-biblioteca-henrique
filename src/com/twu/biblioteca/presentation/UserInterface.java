@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class UserInterface {
 
     private static final String[] MENU_OPTIONS = {
+            "Quit",
             "List Books"
     };
 

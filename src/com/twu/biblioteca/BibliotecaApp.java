@@ -15,12 +15,16 @@ public class BibliotecaApp {
         System.out.println(UserInterface.buildWelcomeMessage() + "\n");
         System.out.println(UserInterface.buildStringForTheMenuOptions() + "\n");
 
-        int chosenOption = UserInterface.waitForUserChoice();
+        int chosenOption;
 
-        switch (chosenOption) {
-            case 0:
-                System.out.println("\n" + UserInterface.buildStringForABookList(bookList));
-                break;
-        }
+        do {
+            chosenOption = UserInterface.waitForUserChoice();
+            
+            switch (chosenOption) {
+                case 1:
+                    System.out.println("\n" + UserInterface.buildStringForABookList(bookList));
+                    break;
+            }
+        } while (chosenOption != 0);
     }
 }

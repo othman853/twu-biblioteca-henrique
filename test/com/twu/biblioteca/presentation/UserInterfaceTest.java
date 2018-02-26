@@ -16,7 +16,8 @@ public class UserInterfaceTest {
 
     @Test
     public void testBuildStringForTheMenuOptions() {
-        final String EXPECTED_RETURN = "(0) LIST BOOKS";
+        final String EXPECTED_RETURN = "(0) QUIT\n" +
+                "(1) LIST BOOKS";
 
         assertEquals(EXPECTED_RETURN, UserInterface.buildStringForTheMenuOptions());
     }
