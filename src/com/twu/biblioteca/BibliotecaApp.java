@@ -13,6 +13,14 @@ public class BibliotecaApp {
         bookList.add(new Book("Head First Java", "Kathy Sierra", 2003));
 
         System.out.println(UserInterface.buildWelcomeMessage() + "\n");
-        System.out.println(UserInterface.buildStringForTheMenuOptions());
+        System.out.println(UserInterface.buildStringForTheMenuOptions() + "\n");
+
+        int chosenOption = UserInterface.waitForUserChoice();
+
+        switch (chosenOption) {
+            case 0:
+                System.out.println("\n" + UserInterface.buildStringForABookList(bookList));
+                break;
+        }
     }
 }

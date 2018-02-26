@@ -21,7 +21,6 @@ public class UserInterfaceTest {
         assertEquals(EXPECTED_RETURN, UserInterface.buildStringForTheMenuOptions());
     }
 
-
     @Test
     public void testBuildStringForAList() {
         ArrayList<Book> bookList = new ArrayList<Book>();
@@ -33,5 +32,10 @@ public class UserInterfaceTest {
                 "(1) ANOTHER PERSON, Another Title - 2018";
 
         assertEquals(EXPECTED_RETURN, UserInterface.buildStringForABookList(bookList));
+    }
+
+    @Test
+    public void testWaitForUserChoice() {
+
     }
 }

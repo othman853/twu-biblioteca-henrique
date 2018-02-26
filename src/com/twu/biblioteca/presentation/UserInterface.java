@@ -3,6 +3,7 @@ package com.twu.biblioteca.presentation;
 import com.twu.biblioteca.models.Book;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class UserInterface {
 
@@ -34,5 +35,22 @@ public class UserInterface {
         }
 
         return listToString;
+    }
+
+    // TODO: Write tests for this method!!
+    public static int waitForUserChoice() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Select an option: ");
+        int userChoice = input.nextInt();
+
+        if (userChoice < 0 || userChoice > MENU_OPTIONS.length - 1) try {
+            throw new Exception();
+        } catch (Exception e) {
+            System.out.println("Select a valid option!");
+            waitForUserChoice();
+        }
+
+        return userChoice;
     }
 }
