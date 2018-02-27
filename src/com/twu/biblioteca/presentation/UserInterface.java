@@ -40,6 +40,16 @@ public class UserInterface {
         return listToString;
     }
 
+    public static String buildAHorizontalLine(char key, int size) {
+        String horizontalLine = "";
+
+        for (int i = 0; i < size; i++) {
+            horizontalLine += key;
+        }
+
+        return horizontalLine;
+    }
+
     // TODO: Write tests for this method!!
     public static int waitForUserChoice() {
         Scanner input = new Scanner(System.in);
@@ -63,10 +73,10 @@ public class UserInterface {
         System.out.print("Choose a book: ");
         int userChoice = input.nextInt();
 
-        if (userChoice < 0 || userChoice > bookList.size() - 1) try {
+        if (userChoice < 0 || userChoice > bookList.size() - 1 || bookList.get(userChoice).isCheckedOut()) try {
             throw new Exception();
         } catch (Exception e) {
-            System.out.println("Select a valid option!");
+            System.out.println("That book is not available.");
             waitForUserChooseABook(bookList);
         }
 

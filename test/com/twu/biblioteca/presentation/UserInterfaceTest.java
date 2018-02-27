@@ -38,7 +38,24 @@ public class UserInterfaceTest {
     }
 
     @Test
+    public void testBuildAHorizontalLine() {
+        String oneCharacterLongLineOfAsterisks = UserInterface.buildAHorizontalLine('*', 1);
+        assertEquals(1, oneCharacterLongLineOfAsterisks.length());
+        assertEquals('*', oneCharacterLongLineOfAsterisks.charAt(0));
+
+        String twentyFiveCharactersLongLineOfEqualSigns = UserInterface.buildAHorizontalLine('=', 25);
+        assertEquals(25, twentyFiveCharactersLongLineOfEqualSigns.length());
+//
+//        char[]
+    }
+
+    @Test
     public void testWaitForUserChoice() {
+
+    }
+
+    @Test
+    public void testWaitForUserChooseABook() {
 
     }
 }
