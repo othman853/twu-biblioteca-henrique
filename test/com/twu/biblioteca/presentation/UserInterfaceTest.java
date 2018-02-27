@@ -45,8 +45,8 @@ public class UserInterfaceTest {
 
         String twentyFiveCharactersLongLineOfEqualSigns = UserInterface.buildAHorizontalLine('=', 25);
         assertEquals(25, twentyFiveCharactersLongLineOfEqualSigns.length());
-//
-//        char[]
+
+        for (int i = 0; i < 25; i++) assertEquals('=', twentyFiveCharactersLongLineOfEqualSigns.charAt(i));
     }
 
     @Test
