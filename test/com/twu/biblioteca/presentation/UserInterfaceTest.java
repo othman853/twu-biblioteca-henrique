@@ -48,14 +48,4 @@ public class UserInterfaceTest {
 
         for (int i = 0; i < 25; i++) assertEquals('=', twentyFiveCharactersLongLineOfEqualSigns.charAt(i));
     }
-
-    @Test
-    public void testWaitForUserChoice() {
-
-    }
-
-    @Test
-    public void testWaitForUserChooseABook() {
-
-    }
 }

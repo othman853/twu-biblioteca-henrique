@@ -49,37 +49,4 @@ public class UserInterface {
 
         return horizontalLine;
     }
-
-    // TODO: Write tests for this method!!
-    public static int waitForUserChoice() {
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("Select an option: ");
-        int userChoice = input.nextInt();
-
-        if (userChoice < 0 || userChoice > MENU_OPTIONS.length - 1) try {
-            throw new Exception();
-        } catch (Exception e) {
-            System.out.println("Select a valid option!");
-            waitForUserChoice();
-        }
-
-        return userChoice;
-    }
-
-    public static Book waitForUserChooseABook(ArrayList<Book> bookList) {
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("Choose a book: ");
-        int userChoice = input.nextInt();
-
-        if (userChoice < 0 || userChoice > bookList.size() - 1 || bookList.get(userChoice).isCheckedOut()) try {
-            throw new Exception();
-        } catch (Exception e) {
-            System.out.println("That book is not available.");
-            waitForUserChooseABook(bookList);
-        }
-
-        return bookList.get(userChoice);
-    }
 }
