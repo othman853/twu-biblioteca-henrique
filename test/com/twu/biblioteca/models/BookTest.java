@@ -11,4 +11,11 @@ public class BookTest {
         Book exampleBook = new Book("Title", "Author", 2018, false);
         assertEquals("AUTHOR, Title - 2018", exampleBook.toString());
     }
+
+    @Test
+    public void testCheckout() {
+        Book exampleBook = new Book("Title", "Author", 2018, false);
+        exampleBook.checkOut();
+        assertTrue(exampleBook.isCheckedOut());
+    }
 }

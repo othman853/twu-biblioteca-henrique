@@ -22,4 +22,8 @@ public class Book {
     public boolean isCheckedOut() {
         return checkedOut;
     }
+
+    public void checkOut() {
+        checkedOut = true;
+    }
 }

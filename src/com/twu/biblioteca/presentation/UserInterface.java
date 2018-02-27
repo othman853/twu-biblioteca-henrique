@@ -9,7 +9,8 @@ public class UserInterface {
 
     private static final String[] MENU_OPTIONS = {
             "Quit",
-            "List Books"
+            "List Books",
+            "Checkout a book"
     };
 
     public static String buildWelcomeMessage() {
@@ -54,5 +55,21 @@ public class UserInterface {
         }
 
         return userChoice;
+    }
+
+    public static Book waitForUserChooseABook(ArrayList<Book> bookList) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Choose a book: ");
+        int userChoice = input.nextInt();
+
+        if (userChoice < 0 || userChoice > bookList.size() - 1) try {
+            throw new Exception();
+        } catch (Exception e) {
+            System.out.println("Select a valid option!");
+            waitForUserChooseABook(bookList);
+        }
+
+        return bookList.get(userChoice);
     }
 }
