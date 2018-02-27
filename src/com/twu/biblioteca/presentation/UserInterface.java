@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class UserInterface {
 
-    private static final String[] MENU_OPTIONS = {
+    private static final String[] MENU_OPTIONS = { //extrair p/ uma nova classe
             "Quit",
             "List Books",
             "Checkout a book"
@@ -28,7 +28,7 @@ public class UserInterface {
         return menuOptionsToString;
     }
 
-    public static String buildStringForABookList(ArrayList<Book> bookList) {
+    public static String buildStringForABookList(ArrayList<Book> bookList) { // rever o filtro dos livros checkedout
         String listToString = "";
 
         for (int i = 0; i < bookList.size(); i++) {
